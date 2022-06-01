@@ -1,0 +1,60 @@
+{
+  "name": "root",
+  "version": "1.0.0",
+  "private": true,
+  "engines": {
+    "node": "14 || 16"
+  },
+  "scripts": {
+    "dev": "concurrently \"yarn start\" \"yarn start-backend\"",
+    "start": "yarn workspace app start",
+    "start-backend": "yarn workspace backend start",
+    "build": "lerna run build",
+    "tsc": "tsc",
+    "tsc:full": "tsc --skipLibCheck false --incremental false",
+    "clean": "backstage-cli clean && lerna run clean",
+    "diff": "lerna run diff --",
+    "test": "lerna run test --since origin/master -- --coverage",
+    "test:all": "lerna run test -- --coverage",
+    "lint": "lerna run lint --since origin/master --",
+    "lint:all": "lerna run lint --",
+    "create-plugin": "backstage-cli create-plugin --scope internal --no-private",
+    "remove-plugin": "backstage-cli remove-plugin",
+    "prettier:check": "prettier --check ."
+  },
+  "workspaces": {
+    "packages": [
+      "packages/*",
+      "plugins/*"
+    ]
+  },
+  "resolutions": {
+    "@types/hast": "^2.3.4",
+    "@types/recharts": "^1.8.23",
+    "@types/react": "^17.0.2",
+    "@types/unist": "^2.0.6"
+  },
+  "devDependencies": {
+    "@backstage/cli": "^0.16.0",
+    "@spotify/prettier-config": "^7.0.0",
+    "concurrently": "^6.0.0",
+    "lerna": "^3.20.2",
+    "prettier": "^2.3.2",
+    "typescript": "^4.5.5"
+  },
+  "prettier": "@spotify/prettier-config",
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{json,md}": [
+      "prettier --write"
+    ]
+  },
+  "jest": {
+    "transformModules": [
+      "@asyncapi/react-component"
+    ]
+  }
+}

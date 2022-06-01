@@ -5,7 +5,7 @@ metadata:
   description: An example deployment of a Backstage application. Trying for test purpose of backstage. 
   annotations:
     github.com/project-slug: backstage/demo
-    backstage.io/techdocs-ref: dir:/c/Users/H896711/backstagetest
+    backstage.io/techdocs-ref: dir:/c/Users/H896711/backstagetest/docs
 spec:
   type: website
   owner: backstage/maintainers

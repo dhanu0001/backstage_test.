@@ -58,6 +58,11 @@ import { EntityTechdocsContent } from '@backstage/plugin-techdocs';
 import { EntityTodoContent } from '@backstage/plugin-todo';
 import { EmptyState } from '@backstage/core-components';
 import { EntityCatalogGraphCard } from '@backstage/plugin-catalog-graph';
+import {
+  EntityCircleCIContent,
+  isCircleCIAvailable,
+} from '@backstage/plugin-circleci';
+
 
 const EntityLayoutWrapper = (props: { children?: React.ReactNode }) => {
   const [badgesDialogOpen, setBadgesDialogOpen] = useState(false);
@@ -110,6 +115,10 @@ export const cicdContent = (
       <EntityGithubActionsContent />
     </EntitySwitch.Case>
 
+    <EntitySwitch.Case if={isCircleCIAvailable}>
+      <EntityCircleCIContent />
+    </EntitySwitch.Case>
+
     <EntitySwitch.Case>
       <EmptyState
         title="No CI/CD available for this entity"
@@ -126,7 +135,8 @@ export const cicdContent = (
         }
       />
     </EntitySwitch.Case>
-  </EntitySwitch>
+    
+  </EntitySwitch> 
 );
 
 const cicdCard = (

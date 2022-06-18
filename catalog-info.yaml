@@ -13,7 +13,7 @@ metadata:
     - title: Discord Chat
       url: https://discord.com/invite/EBHEGzX
   annotations:
-    github.com/project-slug: backstage/demo
+    github.com/project-slug: ziyashaw/backstage_test
     backstage.io/techdocs-ref: url:https://github.com/ziyashaw/backstage_test 
     lighthouse.com/website-url: https://backstage.io
     circleci.com/project-slug: ziyashaw/backstage_test

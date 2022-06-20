@@ -92,8 +92,8 @@ costInsights:
 # app-config.heroku.yaml replaces these values
 # These configs here are required for config validation in CI to pass
 techdocs:
-  builder: 'external'
+  builder: 'local'
   generator:
-    runIn: 'local'
+    runIn: 'docker'
   publisher:
     type: 'local'

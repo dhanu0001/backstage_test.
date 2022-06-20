@@ -19,5 +19,5 @@ metadata:
     circleci.com/project-slug: ziyashaw/backstage_test
 spec:
   type: website
-  owner: backstage/ziya
+  owner: ziyashaw
   lifecycle: experimental
